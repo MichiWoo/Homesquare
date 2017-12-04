@@ -16,4 +16,8 @@ export class AppComponent {
       this.listo = true;
     }, 3000)
   }
+
+  hacerAlgo(){
+    alert('Haciendo algo')
+  }
 }
