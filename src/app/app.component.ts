@@ -10,6 +10,8 @@ export class AppComponent {
   a = 3;
   b = 5;
   listo = false;
+  firstName = '';
+  lastName = '';
 
   constructor(){
     setTimeout(() => {

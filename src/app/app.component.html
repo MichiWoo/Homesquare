@@ -6,5 +6,11 @@
  <h2>
    {{a+b}}
  </h2>
- <hr />
-<button [disabled]="!listo" (click)="hacerAlgo()">Click Me</button>
+  <hr />
+  <button [disabled]="!listo" (click)="hacerAlgo()">Click Me</button>
+  <hr />
+  <input type="text" placeholder="Tu nombre" [(ngModel)]="firtsName"/>
+  <input type="text" placeholder="Apellido" [(ngModel)]="lastName"/>
+  <br />
+  Mi nombre es {{firtsName}} {{lastName}}
+</div>
