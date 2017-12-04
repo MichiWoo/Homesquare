@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Homesquare';
   lugares:any = [
-    {nombre: 'Florería la Gardenia'},
-    {nombre: 'Donas la Pasadita'},
-    {nombre: 'Veterinaria Huellitas Felices'},
-    {nombre: 'Florería la Gardenia'},
-    {nombre: 'Donas la Pasadita'},
-    {nombre: 'Veterinaria Huellitas Felices'}
+    {active: true, nombre: 'Florería la Gardenia'},
+    {active: true, nombre: 'Donas la Pasadita'},
+    {active: true, nombre: 'Veterinaria Huellitas Felices'},
+    {active: false, nombre: 'Sushi Sushiroll'},
+    {active: true, nombre: 'Hotel la Gracia'},
+    {active: true, nombre: 'Zapatería el Clavo'}
   ];
 
   constructor(){
