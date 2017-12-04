@@ -13,7 +13,7 @@ export class AppComponent {
     {active: true, nombre: 'Veterinaria Huellitas Felices'},
     {active: false, nombre: 'Sushi Sushiroll'},
     {active: true, nombre: 'Hotel la Gracia'},
-    {active: true, nombre: 'Zapatería el Clavo'}
+    {active: false, nombre: 'Zapatería el Clavo'}
   ];
   lat:number = 20.9570718;
   lng:number = -97.4085713;
