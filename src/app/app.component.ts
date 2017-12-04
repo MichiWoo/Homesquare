@@ -7,19 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Homesquare';
-  a = 3;
-  b = 5;
-  listo = false;
-  firstName = '';
-  lastName = '';
+  lugares:any = [
+    {nombre: 'Florería la Gardenia'},
+    {nombre: 'Donas la Pasadita'},
+    {nombre: 'Veterinaria Huellitas Felices'},
+    {nombre: 'Florería la Gardenia'},
+    {nombre: 'Donas la Pasadita'},
+    {nombre: 'Veterinaria Huellitas Felices'}
+  ];
 
   constructor(){
-    setTimeout(() => {
-      this.listo = true;
-    }, 3000)
-  }
 
-  hacerAlgo(){
-    alert('Haciendo algo')
   }
 }
