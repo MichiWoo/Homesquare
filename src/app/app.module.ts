@@ -13,7 +13,7 @@ import { LugaresComponent } from './lugares/lugares.component';
 const appRoutes: Routes = [
   {pathMatch: 'full', path:'', component: LugaresComponent},
   {pathMatch: 'full', path:'lugares', component: LugaresComponent},
-  {pathMatch: 'full', path:'detalle', component: DetalleComponent}
+  {pathMatch: 'full', path:'detalle/:id', component: DetalleComponent}
 ];
 
 @NgModule({
