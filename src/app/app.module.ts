@@ -12,12 +12,23 @@ import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 const appRoutes: Routes = [
   {pathMatch: 'full', path:'', component: LugaresComponent},
   {pathMatch: 'full', path:'lugares', component: LugaresComponent},
   {pathMatch: 'full', path:'detalle/:id', component: DetalleComponent},
   {pathMatch: 'full', path:'contacto', component: ContactoComponent},
 ];
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyDLKlAogFqLhwZzvXrdC8mWAMBVRiRrMHU",
+  authDomain: "homesquare-1512367488394.firebaseapp.com",
+  databaseURL: "https://homesquare-1512367488394.firebaseio.com",
+  storageBucket: "homesquare-1512367488394.appspot.com",
+  messagingSenderId: "202691253549"
+};
 
 @NgModule({
   declarations: [
@@ -35,7 +46,10 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyCkeyQpOy2EWOz3nOIG5JfNXWEtMiMj3RE'
     }),
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [LugaresService],
   bootstrap: [AppComponent]
