@@ -1,0 +1,40 @@
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/lugares">Lugares</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <label for="">Nombre</label>
+      <input type="text" class="form-control">
+      <label for="">Correo</label>
+      <input type="email" name="" id="" class="form-control">
+      <label for="">Mensaje</label>
+      <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+      <hr />
+      <button class="btn btn-primary">Enviar</button>
+      <button class="btn btn-default" routerLink="/lugares">Cancelar</button>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div class="card bg-light mb-3">
+          <div class="card-header">Michiwoo Webs</div>
+          <div class="card-body">
+            <h4 class="card-title">Datos de Contacto</h4>
+            <p class="card-text">
+              Dirección: <b>2a. de Allende #2, Centro</b><br />
+              Teléfono: <b>783 834 4591</b><br />
+              Móvil: <b>783 104 6302</b><br />
+              Web: <b>www.michiwooweb.esy.es</b><br />
+              E-mail: <b>michiwoo.web@gmail.com</b>
+            </p>
+          </div>
+        </div>
+        <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+    </div>
+  </div>
+</div>

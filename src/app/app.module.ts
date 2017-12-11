@@ -10,10 +10,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from "@angular/router";
 import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
+import { ContactoComponent } from './contacto/contacto.component';
 const appRoutes: Routes = [
   {pathMatch: 'full', path:'', component: LugaresComponent},
   {pathMatch: 'full', path:'lugares', component: LugaresComponent},
-  {pathMatch: 'full', path:'detalle/:id', component: DetalleComponent}
+  {pathMatch: 'full', path:'detalle/:id', component: DetalleComponent},
+  {pathMatch: 'full', path:'contacto', component: ContactoComponent},
 ];
 
 @NgModule({
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     ResaltarDirective,
     ContarClicksDirective,
     DetalleComponent,
-    LugaresComponent
+    LugaresComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

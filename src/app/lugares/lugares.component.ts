@@ -14,8 +14,8 @@ export class LugaresComponent {
         {id: 5, plan: 'pagado', cercania: 3, distancia: 35, active: true, nombre:'Hotel la Gracia'},
         {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, active: false, nombre:'Zapatería el Clavo'}
     ];
-    lat:number = 4.6560663;
-    lng:number = -74.0595918;
+    lat:number = 20.9573458;
+    lng:number = -97.4084174;
     constructor(){
 
     }
