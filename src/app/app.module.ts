@@ -15,11 +15,14 @@ import { LugaresService } from './services/lugares.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { CrearComponent } from './crear/crear.component';
+
 const appRoutes: Routes = [
   {pathMatch: 'full', path:'', component: LugaresComponent},
   {pathMatch: 'full', path:'lugares', component: LugaresComponent},
   {pathMatch: 'full', path:'detalle/:id', component: DetalleComponent},
   {pathMatch: 'full', path:'contacto', component: ContactoComponent},
+  {pathMatch: 'full', path:'crear', component: CrearComponent}
 ];
 
 export const firebaseConfig = {
@@ -37,7 +40,8 @@ export const firebaseConfig = {
     ContarClicksDirective,
     DetalleComponent,
     LugaresComponent,
-    ContactoComponent
+    ContactoComponent,
+    CrearComponent
   ],
   imports: [
     BrowserModule,
