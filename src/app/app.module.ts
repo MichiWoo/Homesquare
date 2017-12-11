@@ -11,6 +11,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { LugaresService } from './services/lugares.service';
 const appRoutes: Routes = [
   {pathMatch: 'full', path:'', component: LugaresComponent},
   {pathMatch: 'full', path:'lugares', component: LugaresComponent},
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [LugaresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
