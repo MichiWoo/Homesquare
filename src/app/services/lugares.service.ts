@@ -21,7 +21,8 @@ export class LugaresService{
   constructor(private afDB: AngularFireDatabase, private http: Http){}
 
   public getLugares(){
-    return this.afDB.list('lugares/');
+    // return this.afDB.list('lugares/');
+    return this.http.get(`${this.API_ENDPOINT}/lugares.json`);
   }
 
   public buscarLugar(id){
@@ -31,8 +32,8 @@ export class LugaresService{
   public guardarLugar(lugar){
     // this.afDB.database.ref('lugares/'+lugar.id).set(lugar);
     const headers = new Headers({"Content-Type":"application/json"});
-    return this.http.post(this.API_ENDPOINT+'/lugares.json', lugar, {headers:headers})
-            .subscribe();
+    return this.http.post(`${this.API_ENDPOINT}/lugares.json`, lugar, {headers:headers})
+    .subscribe();
   }
 
   public editarLugar(lugar){
