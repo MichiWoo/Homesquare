@@ -6,12 +6,15 @@ import { LugaresService } from '../services/lugares.service';
     templateUrl: './lugares.component.html'
 })
 export class LugaresComponent {
-    title = 'PlatziSquare';
+    title = 'HomeSquare';
 
     lat:number = 20.9573458;
     lng:number = -97.4084174;
     lugares = null;
     constructor(private lugaresService: LugaresService){
-        this.lugares = lugaresService.getLugares();
+        lugaresService.getLugares()
+            .valueChanges().subscribe(lugares =>{
+                this.lugares = lugares;
+            });
     }
 }
