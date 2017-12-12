@@ -23,7 +23,7 @@ const appRoutes: Routes = [
   {pathMatch: 'full', path:'lugares', component: LugaresComponent},
   {pathMatch: 'full', path:'detalle/:id', component: DetalleComponent},
   {pathMatch: 'full', path:'contacto', component: ContactoComponent},
-  {pathMatch: 'full', path:'crear', component: CrearComponent}
+  {pathMatch: 'full', path:'crear/:id', component: CrearComponent}
 ];
 
 export const firebaseConfig = {
