@@ -17,6 +17,9 @@ export class LugaresComponent {
                 this.lugares = lugares;
                 var me = this;
                 me.lugares = Object.keys(me.lugares).map(function (key) { return me.lugares[key]; });
+            }, error => {
+                console.log(error);
+                alert(`Tenemos algunos problemas, disculpe las molestias. Error ${error.statusText}`);
             });
     }
 }
