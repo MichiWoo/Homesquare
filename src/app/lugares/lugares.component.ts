@@ -32,7 +32,14 @@ export class LugaresComponent {
     animar(){
         this.state = (this.state === 'final') ? 'inicial' : 'final';
     }
-
+    animacionInicia(e){
+        console.log('iniciado');
+        console.log(e);
+    }
+    animacionTermina(e){
+        console.log('terminado');
+        console.log(e);
+    }
     constructor(private lugaresService: LugaresService){
         lugaresService.getLugares()
             .subscribe(lugares =>{
