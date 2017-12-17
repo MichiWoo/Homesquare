@@ -13,3 +13,8 @@ agm-map {
   width: 200px;
   background: red;
 }
+
+.padding {
+  padding: 10px;
+  marging-bottom: 10px;
+}
