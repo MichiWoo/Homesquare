@@ -13,8 +13,13 @@
       <li routerLinkActive="nav-item active">
         <a class="nav-link" routerLink="/contacto">Contacto</a>
       </li>
+    </ul>
+    <ul class="navbar-nav mr-auto navbar-right">
       <li routerLinkActive="nav-item active" *ngIf="!loggedIn">
         <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li routerLinkActive="nav-item active" *ngIf="loggedIn">
+        <a class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>

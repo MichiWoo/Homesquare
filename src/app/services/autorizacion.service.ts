@@ -50,4 +50,10 @@ export class AutorizacionService{
   public isLogged(){
     return this.angularFireAuth.authState;
   }
+
+  public logout(){
+    this.angularFireAuth.auth.signOut();
+    console.log('Sesión Cerrada');
+    this.router.navigate(['lugares']);
+  }
 }
