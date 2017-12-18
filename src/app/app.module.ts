@@ -21,13 +21,14 @@ import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AutorizacionService } from './services/autorizacion.service';
+import { MyGuard } from './services/my-guard.service';
 
 const appRoutes: Routes = [
   {pathMatch: 'full', path:'', component: LugaresComponent},
   {pathMatch: 'full', path:'lugares', component: LugaresComponent},
   {pathMatch: 'full', path:'detalle/:id', component: DetalleComponent},
   {pathMatch: 'full', path:'contacto', component: ContactoComponent},
-  {pathMatch: 'full', path:'crear/:id', component: CrearComponent},
+  {pathMatch: 'full', path:'crear/:id', component: CrearComponent, canActivate:[MyGuard]},
   {pathMatch: 'full', path:'login', component: LoginComponent},
   {pathMatch: 'full', path:'registro', component: RegistroComponent}
 ];
@@ -66,7 +67,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     HttpModule
   ],
-  providers: [LugaresService, AutorizacionService],
+  providers: [LugaresService, AutorizacionService, MyGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
