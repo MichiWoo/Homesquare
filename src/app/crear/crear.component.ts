@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { LugaresService } from '../services/lugares.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import 'rxjs/Rx';
+import { FormControl } from '@angular/forms';
+import { Http } from '@angular/http';
 
 @Component({
     selector: 'app-crear',
@@ -10,7 +14,10 @@ export class CrearComponent {
     lugar:any = {};
     id:any = null;
 
-    constructor(private lugaresService: LugaresService, private route: ActivatedRoute){
+    results$: Observable<any>;
+    private searchField: FormControl;
+
+    constructor(private lugaresService: LugaresService, private route: ActivatedRoute, private http: Http){
         this.id = this.route.snapshot.params['id'];
         console.log(this.id);
         if (this.id != 'new') {
@@ -19,6 +26,13 @@ export class CrearComponent {
                     this.lugar = lugar;
                 });
         }
+        const URL = 'http://maps.google.com/maps/api/geocode/json';
+        this.searchField = new FormControl();
+        this.results$ = this.searchField.valueChanges
+            .debounceTime(500)
+            .switchMap(query => this.http.get(`${URL}?address=${query}`))
+            .map(response => response.json())
+            .map(response => response.results);
     }
 
     guardarLugar(){
