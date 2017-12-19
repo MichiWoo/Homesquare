@@ -8,11 +8,15 @@ import { AutorizacionService } from './services/autorizacion.service';
 })
 export class AppComponent {
   loggedIn = false;
+  loggedUser = null;
   constructor(private autorizacionService: AutorizacionService){
     this.autorizacionService.isLogged()
       .subscribe((result)=>{
         if (result && result.uid){
           this.loggedIn = true;
+          setTimeout(()=>{
+            this.loggedUser = this.autorizacionService.getUser().currentUser.email;
+          });
         } else {
           this.loggedIn = false;
         }

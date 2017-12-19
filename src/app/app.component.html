@@ -19,6 +19,9 @@
         <a class="nav-link" routerLink="/login">Login</a>
       </li>
       <li routerLinkActive="nav-item active" *ngIf="loggedIn">
+        <a class="nav-link">{{loggedUser}}</a>
+      </li>
+      <li routerLinkActive="nav-item active" *ngIf="loggedIn">
         <a class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
