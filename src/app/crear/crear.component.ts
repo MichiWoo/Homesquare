@@ -22,11 +22,12 @@ export class CrearComponent {
         console.log(this.id);
         if (this.id != 'new') {
             this.lugaresService.getLugar(this.id)
-                .valueChanges().subscribe(lugar =>{
+                .valueChanges()
+                .subscribe(lugar =>{
                     this.lugar = lugar;
                 });
         }
-        const URL = 'http://maps.google.com/maps/api/geocode/json';
+        const URL = 'https://maps.google.com/maps/api/geocode/json';
         this.searchField = new FormControl();
         this.results$ = this.searchField.valueChanges
             .debounceTime(500)

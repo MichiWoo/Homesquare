@@ -22,12 +22,12 @@ export class LugaresService{
   constructor(private afDB: AngularFireDatabase, private http: Http){}
 
   public getLugares(){
-    // return this.afDB.list('lugares/');
-    return this.http.get(`${this.API_ENDPOINT}/.json`)
-      .map((resultado) =>{
-        const data = resultado.json().lugares;
-        return data;
-      })
+    return this.afDB.list('lugares/');
+    // return this.http.get(`${this.API_ENDPOINT}/.json`)
+    //   .map((resultado) =>{
+    //     const data = resultado.json().lugares;
+    //     return data;
+    //   })
   }
 
   public buscarLugar(id){
@@ -35,10 +35,10 @@ export class LugaresService{
   }
 
   public guardarLugar(lugar){
-    // this.afDB.database.ref('lugares/'+lugar.id).set(lugar);
-    const headers = new Headers({"Content-Type":"application/json"});
-    return this.http.post(`${this.API_ENDPOINT}/lugares.json`, lugar, {headers:headers})
-    .subscribe();
+    this.afDB.database.ref('lugares/'+lugar.id).set(lugar);
+    // const headers = new Headers({"Content-Type":"application/json"});
+    // return this.http.post(`${this.API_ENDPOINT}/lugares.json`, lugar, {headers:headers})
+    // .subscribe();
   }
 
   public editarLugar(lugar){
@@ -47,7 +47,7 @@ export class LugaresService{
 
   public obtenerGeoData(direccion){
     //http://maps.google.com/maps/api/geocode/json?address=9-55+calle+72,+Bogota,Colombia
-    return this.http.get(`http://maps.google.com/maps/api/geocode/json?address=${direccion}`);
+    return this.http.get(`https://maps.google.com/maps/api/geocode/json?address=${direccion}`);
   }
 
   public getLugar(id){
